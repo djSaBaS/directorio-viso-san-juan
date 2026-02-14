@@ -1,0 +1,96 @@
+<!-- Comentario: Declaramos el tipo de documento HTML5. -->
+<!doctype html>
+<!-- Comentario: Abrimos el documento HTML y definimos el idioma. -->
+<html lang="es">
+<!-- Comentario: Abrimos la cabecera del documento. -->
+<head>
+  <!-- Comentario: Definimos codificación UTF-8 para caracteres especiales. -->
+  <meta charset="utf-8" />
+  <!-- Comentario: Ajustamos la vista para móviles (responsive). -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Comentario: Título de la pestaña del navegador. -->
+  <title>Teléfonos de interés · El Viso de San Juan</title>
+  <!-- Comentario: Descripción para SEO y previsualizaciones. -->
+  <meta name="description" content="Directorio de teléfonos, direcciones y contactos de interés para El Viso de San Juan y zona. Buscador, categorías y reporte de datos." />
+  <!-- Comentario: Vinculamos la hoja de estilos principal. -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<!-- Comentario: Abrimos el cuerpo de la página. -->
+<body>
+  <!-- Comentario: Encabezado principal del sitio. -->
+  <header class="header">
+    <!-- Comentario: Contenedor para mantener el ancho y centrar contenido. -->
+    <div class="container">
+      <!-- Comentario: Título visible del directorio. -->
+      <h1 class="title">📌 Teléfonos y direcciones de interés</h1>
+      <!-- Comentario: Subtítulo con contexto del uso comunitario. -->
+      <p class="subtitle">El Viso de San Juan (Toledo) · Directorio comunitario con buscador y categorías</p>
+    </div>
+  </header>
+
+  <!-- Comentario: Sección principal con buscador y filtros. -->
+  <main class="main">
+    <!-- Comentario: Contenedor principal de la interfaz. -->
+    <div class="container">
+      <!-- Comentario: Área superior con buscador, categorías y acciones. -->
+      <section class="controls" aria-label="Buscador y filtros">
+        <!-- Comentario: Agrupamos la búsqueda para accesibilidad. -->
+        <div class="search-group">
+          <!-- Comentario: Etiqueta accesible para el campo de búsqueda. -->
+          <label class="label" for="searchInput">Buscar</label>
+          <!-- Comentario: Input para búsqueda por nombre, teléfono, dirección, email, notas, etc. -->
+          <input id="searchInput" class="input" type="search" placeholder="Ej: Ayuntamiento, 112, Farmacia, Illescas..." autocomplete="off" />
+        </div>
+
+        <!-- Comentario: Agrupamos el selector de categorías. -->
+        <div class="filter-group">
+          <!-- Comentario: Etiqueta accesible para el selector. -->
+          <label class="label" for="categorySelect">Categoría</label>
+          <!-- Comentario: Selector de categoría, se rellena dinámicamente con los datos. -->
+          <select id="categorySelect" class="select">
+            <!-- Comentario: Opción por defecto para ver todas las categorías. -->
+            <option value="__all__">Todas</option>
+          </select>
+        </div>
+
+        <!-- Comentario: Área de acciones rápidas (reportar / actualizar). -->
+        <div class="actions-group">
+          <!-- Comentario: Botón para recargar datos desde la fuente. -->
+          <button id="refreshButton" class="button" type="button">🔄 Actualizar</button>
+          <!-- Comentario: Enlace a un formulario general de sugerencias (opcional). -->
+          <a id="generalReportLink" class="button button-secondary" href="#" target="_blank" rel="noopener noreferrer">📝 Sugerir alta / cambio</a>
+        </div>
+      </section>
+
+      <!-- Comentario: Caja de estado para mensajes (cargando, error, etc.). -->
+      <section class="status" aria-live="polite">
+        <!-- Comentario: Texto de estado que se actualizará desde JavaScript. -->
+        <p id="statusText" class="status-text">Cargando directorio…</p>
+      </section>
+
+      <!-- Comentario: Contenedor donde se renderizan las tarjetas. -->
+      <section aria-label="Resultados">
+        <!-- Comentario: Lista de tarjetas generadas por JavaScript. -->
+        <div id="cards" class="cards"></div>
+      </section>
+
+      <!-- Comentario: Pie con fecha de actualización y créditos. -->
+      <footer class="footer">
+        <!-- Comentario: Texto de pie de página. -->
+        <p class="footer-text">
+          <!-- Comentario: Lugar donde se mostrará la fecha de actualización de los datos. -->
+          <span id="lastUpdated">Última actualización: —</span>
+          <!-- Comentario: Separador visual. -->
+          <span class="sep">·</span>
+          <!-- Comentario: Aviso de origen comunitario. -->
+          <span>Proyecto comunitario · WhatsApp “Vecinos del Viso de San Juan”</span>
+        </p>
+      </footer>
+    </div>
+  </main>
+
+  <!-- Comentario: Cargamos el JavaScript al final para mejorar rendimiento. -->
+  <script src="./app.js"></script>
+</body>
+<!-- Comentario: Cerramos el documento HTML. -->
+</html>
