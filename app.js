@@ -4,7 +4,7 @@
 // Comentario: Configuración central del proyecto (URLs y parámetros).
 const CONFIG = {
   // Comentario: URL pública que devuelve el JSON del directorio (Google Apps Script Web App o similar).
-  directoryJsonUrl: 'PEGA_AQUI_TU_URL_JSON_PUBLICA',
+  directoryJsonUrl: 'https://script.google.com/macros/s/AKfycbx-kYSHUL0uwJc3pt5sv1nK6KmrPo4EHdKeIbC0Ek2vRoSFFYEgT9fS_E60-6M0XfFMjg/exec',
   // Comentario: URL del Google Form para sugerir altas/cambios (enlace normal).
   generalReportFormUrl: 'PEGA_AQUI_TU_URL_GOOGLE_FORM_GENERAL',
   // Comentario: Plantilla del Google Form pre-rellenado para incidencias (prefilled link base).
