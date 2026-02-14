@@ -1,0 +1,350 @@
+/* Comentario: Definimos variables CSS para colores, espacios y tamaños. */
+:root {
+  /* Comentario: Color de fondo principal. */
+  --bg: #0f1115;
+  /* Comentario: Color de panel/tarjeta. */
+  --panel: #161a22;
+  /* Comentario: Color de borde suave. */
+  --border: #2a3242;
+  /* Comentario: Color de texto principal. */
+  --text: #e8edf6;
+  /* Comentario: Color de texto secundario. */
+  --muted: #aab6cc;
+  /* Comentario: Color de resaltado para acciones principales. */
+  --accent: #5cc8ff;
+  /* Comentario: Color de advertencia para reportes. */
+  --warn: #ffcc66;
+  /* Comentario: Radio de bordes para estética moderna. */
+  --radius: 14px;
+  /* Comentario: Ancho máximo del contenido para lectura cómoda. */
+  --maxw: 980px;
+}
+
+/* Comentario: Aplicamos box-sizing para evitar cálculos raros de ancho/alto. */
+* {
+  /* Comentario: Incluimos padding y border en el tamaño total del elemento. */
+  box-sizing: border-box;
+}
+
+/* Comentario: Estilos base del body para tipografía y fondo. */
+body {
+  /* Comentario: Eliminamos margen por defecto del navegador. */
+  margin: 0;
+  /* Comentario: Elegimos una fuente de sistema para buen rendimiento. */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+  /* Comentario: Color de fondo. */
+  background: var(--bg);
+  /* Comentario: Color de texto por defecto. */
+  color: var(--text);
+}
+
+/* Comentario: Contenedor centrado con un máximo de ancho. */
+.container {
+  /* Comentario: Ajustamos al ancho completo disponible. */
+  width: 100%;
+  /* Comentario: Limitamos el ancho para no estirar demasiado el texto. */
+  max-width: var(--maxw);
+  /* Comentario: Centramos el contenedor. */
+  margin: 0 auto;
+  /* Comentario: Añadimos padding lateral. */
+  padding: 16px;
+}
+
+/* Comentario: Estilos del encabezado superior. */
+.header {
+  /* Comentario: Fondo ligeramente distinto para destacar la cabecera. */
+  background: linear-gradient(180deg, rgba(92, 200, 255, 0.15), rgba(0, 0, 0, 0));
+  /* Comentario: Línea inferior sutil. */
+  border-bottom: 1px solid var(--border);
+}
+
+/* Comentario: Título principal. */
+.title {
+  /* Comentario: Quitamos margen superior. */
+  margin: 18px 0 6px;
+  /* Comentario: Tamaño de letra grande. */
+  font-size: 26px;
+  /* Comentario: Altura de línea cómoda. */
+  line-height: 1.2;
+}
+
+/* Comentario: Subtítulo descriptivo. */
+.subtitle {
+  /* Comentario: Quitamos margen superior y ajustamos inferior. */
+  margin: 0 0 18px;
+  /* Comentario: Color más suave para no competir con el título. */
+  color: var(--muted);
+}
+
+/* Comentario: Área principal. */
+.main {
+  /* Comentario: Separación vertical. */
+  padding: 10px 0 28px;
+}
+
+/* Comentario: Panel de controles con layout flexible. */
+.controls {
+  /* Comentario: Mostramos en fila y permitimos salto de línea. */
+  display: flex;
+  /* Comentario: Separación entre bloques. */
+  gap: 12px;
+  /* Comentario: Permitimos que baje a la siguiente línea en móvil. */
+  flex-wrap: wrap;
+  /* Comentario: Fondo de panel. */
+  background: var(--panel);
+  /* Comentario: Borde para separar del fondo. */
+  border: 1px solid var(--border);
+  /* Comentario: Bordes redondeados. */
+  border-radius: var(--radius);
+  /* Comentario: Padding interno. */
+  padding: 12px;
+}
+
+/* Comentario: Grupo de búsqueda. */
+.search-group {
+  /* Comentario: Ocupa el máximo posible. */
+  flex: 1 1 320px;
+}
+
+/* Comentario: Grupo de filtros. */
+.filter-group {
+  /* Comentario: Ancho mínimo razonable. */
+  flex: 0 1 220px;
+}
+
+/* Comentario: Grupo de acciones. */
+.actions-group {
+  /* Comentario: Contenido en línea. */
+  display: flex;
+  /* Comentario: Separación entre botones. */
+  gap: 10px;
+  /* Comentario: Alineación vertical. */
+  align-items: flex-end;
+  /* Comentario: Crece si hay espacio. */
+  flex: 1 1 220px;
+}
+
+/* Comentario: Etiquetas de formularios. */
+.label {
+  /* Comentario: Bloque para ocupar línea completa. */
+  display: block;
+  /* Comentario: Tamaño pequeño. */
+  font-size: 12px;
+  /* Comentario: Color atenuado. */
+  color: var(--muted);
+  /* Comentario: Separación con el input. */
+  margin-bottom: 6px;
+}
+
+/* Comentario: Estilo de inputs y selects. */
+.input,
+.select {
+  /* Comentario: Ocupar todo el ancho del contenedor. */
+  width: 100%;
+  /* Comentario: Fondo más oscuro. */
+  background: #0c0f14;
+  /* Comentario: Borde suave. */
+  border: 1px solid var(--border);
+  /* Comentario: Texto claro. */
+  color: var(--text);
+  /* Comentario: Padding interno. */
+  padding: 10px 12px;
+  /* Comentario: Bordes redondeados. */
+  border-radius: 12px;
+  /* Comentario: Tamaño de letra cómodo. */
+  font-size: 14px;
+}
+
+/* Comentario: Estilo base de botones y enlaces tipo botón. */
+.button {
+  /* Comentario: Mostramos como inline-flex para centrar contenido. */
+  display: inline-flex;
+  /* Comentario: Centramos texto e icono. */
+  align-items: center;
+  /* Comentario: Centramos horizontalmente. */
+  justify-content: center;
+  /* Comentario: Padding cómodo. */
+  padding: 10px 12px;
+  /* Comentario: Borde sutil. */
+  border: 1px solid var(--border);
+  /* Comentario: Fondo de acción principal. */
+  background: rgba(92, 200, 255, 0.12);
+  /* Comentario: Color del texto. */
+  color: var(--text);
+  /* Comentario: Bordes redondeados. */
+  border-radius: 12px;
+  /* Comentario: Quitamos subrayado en enlaces. */
+  text-decoration: none;
+  /* Comentario: Cursor de botón. */
+  cursor: pointer;
+  /* Comentario: Tamaño de letra consistente. */
+  font-size: 14px;
+  /* Comentario: Evitamos selección rara al pulsar. */
+  user-select: none;
+}
+
+/* Comentario: Variante secundaria para enlaces menos prominentes. */
+.button-secondary {
+  /* Comentario: Fondo más neutro. */
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Comentario: Estado hover para botones. */
+.button:hover {
+  /* Comentario: Incrementamos ligeramente contraste. */
+  border-color: rgba(92, 200, 255, 0.55);
+}
+
+/* Comentario: Sección de estado (loading / errors). */
+.status {
+  /* Comentario: Espaciado superior. */
+  margin: 14px 0;
+}
+
+/* Comentario: Texto de estado. */
+.status-text {
+  /* Comentario: Fondo sutil. */
+  background: rgba(255, 255, 255, 0.04);
+  /* Comentario: Borde. */
+  border: 1px solid var(--border);
+  /* Comentario: Bordes redondeados. */
+  border-radius: var(--radius);
+  /* Comentario: Padding interno. */
+  padding: 10px 12px;
+  /* Comentario: Color atenuado. */
+  color: var(--muted);
+  /* Comentario: Margen cero. */
+  margin: 0;
+}
+
+/* Comentario: Layout de tarjetas. */
+.cards {
+  /* Comentario: Usamos grid para tarjetas responsivas. */
+  display: grid;
+  /* Comentario: Columnas adaptables al espacio. */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* Comentario: Separación entre tarjetas. */
+  gap: 12px;
+}
+
+/* Comentario: Tarjeta individual. */
+.card {
+  /* Comentario: Fondo de panel. */
+  background: var(--panel);
+  /* Comentario: Borde. */
+  border: 1px solid var(--border);
+  /* Comentario: Bordes redondeados. */
+  border-radius: var(--radius);
+  /* Comentario: Padding interno. */
+  padding: 12px;
+}
+
+/* Comentario: Encabezado de tarjeta. */
+.card-header {
+  /* Comentario: Alineamos elementos. */
+  display: flex;
+  /* Comentario: Separación. */
+  gap: 10px;
+  /* Comentario: Justificamos espacio. */
+  justify-content: space-between;
+  /* Comentario: Alineación vertical. */
+  align-items: flex-start;
+}
+
+/* Comentario: Nombre del servicio. */
+.card-title {
+  /* Comentario: Quitamos margen por defecto. */
+  margin: 0;
+  /* Comentario: Tamaño de letra. */
+  font-size: 16px;
+  /* Comentario: Altura de línea. */
+  line-height: 1.25;
+}
+
+/* Comentario: Etiqueta de categoría. */
+.badge {
+  /* Comentario: Fondo de acento suave. */
+  background: rgba(92, 200, 255, 0.14);
+  /* Comentario: Borde. */
+  border: 1px solid rgba(92, 200, 255, 0.25);
+  /* Comentario: Color de texto. */
+  color: var(--text);
+  /* Comentario: Padding. */
+  padding: 4px 8px;
+  /* Comentario: Bordes redondeados. */
+  border-radius: 999px;
+  /* Comentario: Tamaño pequeño. */
+  font-size: 12px;
+  /* Comentario: Evitamos salto. */
+  white-space: nowrap;
+}
+
+/* Comentario: Filas de detalle. */
+.card-row {
+  /* Comentario: Separación superior. */
+  margin-top: 10px;
+  /* Comentario: Tamaño de letra. */
+  font-size: 14px;
+  /* Comentario: Color atenuado. */
+  color: var(--muted);
+}
+
+/* Comentario: Enlaces dentro de tarjeta. */
+.card a {
+  /* Comentario: Color de enlaces. */
+  color: var(--accent);
+  /* Comentario: Sin subrayado por defecto. */
+  text-decoration: none;
+}
+
+/* Comentario: Subrayado al pasar el ratón. */
+.card a:hover {
+  /* Comentario: Mostramos subrayado en hover para claridad. */
+  text-decoration: underline;
+}
+
+/* Comentario: Zona de botones de la tarjeta. */
+.card-actions {
+  /* Comentario: Layout flexible. */
+  display: flex;
+  /* Comentario: Permitimos que baje a otra línea. */
+  flex-wrap: wrap;
+  /* Comentario: Separación. */
+  gap: 8px;
+  /* Comentario: Separación superior. */
+  margin-top: 12px;
+}
+
+/* Comentario: Botón de aviso dentro de tarjeta. */
+.button-warn {
+  /* Comentario: Fondo de advertencia suave. */
+  background: rgba(255, 204, 102, 0.12);
+  /* Comentario: Borde de advertencia. */
+  border-color: rgba(255, 204, 102, 0.35);
+}
+
+/* Comentario: Pie de página. */
+.footer {
+  /* Comentario: Separación superior. */
+  margin-top: 18px;
+  /* Comentario: Borde superior. */
+  border-top: 1px solid var(--border);
+  /* Comentario: Padding superior. */
+  padding-top: 14px;
+}
+
+/* Comentario: Texto del pie. */
+.footer-text {
+  /* Comentario: Color atenuado. */
+  color: var(--muted);
+  /* Comentario: Tamaño pequeño. */
+  font-size: 12px;
+  /* Comentario: Margen cero. */
+  margin: 0;
+}
+
+/* Comentario: Separador central. */
+.sep {
+  /* Comentario: Margen horizontal. */
+  margin: 0 8px;
+}
