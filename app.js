@@ -83,7 +83,7 @@ function init() {
 // Comentario: Cargamos el directorio desde la URL JSON.
 async function loadDirectory() {
   // Comentario: Validamos que el usuario haya configurado la URL.
-  if (CONFIG.directoryJsonUrl === 'PEGA_AQUI_TU_URL_JSON_PUBLICA') {
+  if (CONFIG.directoryJsonUrl === 'https://script.google.com/macros/s/AKfycbx-kYSHUL0uwJc3pt5sv1nK6KmrPo4EHdKeIbC0Ek2vRoSFFYEgT9fS_E60-6M0XfFMjg/exec') {
     // Comentario: Mostramos estado de configuración pendiente.
     setStatus('⚠️ Falta configurar la URL JSON del directorio (CONFIG.directoryJsonUrl).');
     // Comentario: Limpiamos tarjetas.
