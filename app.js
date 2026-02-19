@@ -389,6 +389,11 @@ function buildCardHtml(r) {
     ? `<a class="button button-secondary" href="${escapeAttr(mapsUrl)}" target="_blank" rel="noopener noreferrer">🧭 Cómo llegar</a>`
     : '';
 
+  //Construimos botón “Email” solo si hay email.
+  const emailButton = mailtoUrl
+    ? `<a class="button button-secondary" href="${escapeAttr(mailtoUrl)}">✉️ Email</a>`
+    : '';
+
   //Devolvemos la tarjeta con campos y acciones.
   return `
     <article class="card">
@@ -406,7 +411,7 @@ function buildCardHtml(r) {
 
       <div class="card-actions">
         ${mapsButton}
-        <a class="button button-secondary" href="${mailtoUrl ? escapeAttr(mailtoUrl) : '#'}" ${mailtoUrl ? '' : 'aria-disabled="true"'}>✉️ Email</a>
+        ${emailButton}
         <a class="button button-warn" href="${escapeAttr(incorrectUrl)}" target="_blank" rel="noopener noreferrer" ${incorrectUrl !== '#' ? '' : 'aria-disabled="true"'}>⚠️ Dato incorrecto</a>
       </div>
     </article>
